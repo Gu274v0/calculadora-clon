@@ -1,0 +1,95 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.form-control,
+.form-select {
+    border: none;
+    background-color: transparent;
+    color: #7AFE00;
+}
+
+.form-control::placeholder {
+    color: red;
+}
+
+.form-select {
+    background-clip: text;
+}
+
+.select-td::after {
+    content: ">";
+    position: absolute;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 21px;
+    top: 14px;
+    transform: scaleY(1.8);
+    font-size: 0.8rem;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-control:focus-visible,
+.form-select:focus-visible {
+    box-shadow: none;
+    background-color: transparent;
+    color: #7AFE00;
+}
+
+.select-td {
+    min-width: 3rem;
+    max-width: 3rem;
+    position: relative;
+}
+
+.result-td {
+    min-width: 5rem;
+    max-width: 5rem;
+}
+
+.table-bordered {
+    border: 2px solid #1A5B84;
+}
+
+th {
+    background-color: #152B47 !important;
+    color: #53CAE9 !important;
+}
+
+td {
+    background-color: #08192B !important;
+    color: #7AFE00 !important;
+}
+
+option {
+    background-color: #152B47;
+}
+
+.row-height {
+    height: 36px;
+}
+
+.title {
+    color: #53CAE9;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+body {
+    background-color: #152B47;
+    background-image: url("./logo.png");
+    background-repeat: no-repeat;
+    background-size: 6rem;
+    background-position: 98% 98%;
+}

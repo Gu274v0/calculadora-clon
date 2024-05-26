@@ -32,8 +32,10 @@ function preencherSelects() {
         let select = document.getElementById("select-" + clon.id);
         select.addEventListener("input", (ev) => calcularClon(clon.id));
 
-        let inputAt = document.getElementById("input-" + clon.id);
-        inputAt.addEventListener("input", (ev) => calcularClon(clon.id));
+        if (clon.id != "bl") {
+            let inputAt = document.getElementById("input-" + clon.id);
+            inputAt.addEventListener("input", (ev) => calcularClon(clon.id));
+        }
 
         for (let i = 15; i >= 1; i--) {
             let opt = document.createElement('option');
@@ -49,15 +51,31 @@ function calcularClon(id) {
     let clon = document.getElementById("select-" + id)?.value;
 
     let resultado = document.getElementById("result-" + id);
-    resultado.innerHTML = valor * clon;
+    let calc = valor * clon;
 
     if (id == "bl") {
         if (clon.length == 0) {
             clon = clons.find(x => x.id == id).valores[14];
         }
 
-        resultado.innerHTML = clon * 100;
+        calc = clon * 100;
     }
+
+    calc = resultadoPorAtributo(calc, id);
+    resultado.innerHTML = calc;
+}
+
+function resultadoPorAtributo(valor, id){
+    let valorDivido = valor.toString().split(".");
+
+    if(id == "at" || id == "hp"){
+        valor = valorDivido[0];
+    }
+    else if (id == "ct" || id == "ev"){
+        valor = valor > 0 ? `${valorDivido[0]},${valorDivido[1]?.substring(0,2)}%` : valor;
+    }
+
+    return valor;
 }
 
 init();
