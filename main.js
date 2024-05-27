@@ -65,17 +65,17 @@ function calcularClon(id) {
     resultado.innerHTML = calc;
 }
 
-function resultadoPorAtributo(valor, id){
+function resultadoPorAtributo(valor, id) {
     let valorDivido = valor.toString().split(".");
 
-    if(id == "at" || id == "hp"){
+    if (id == "at" || id == "hp") {
         valor = valorDivido[0];
     }
     else if (id == "bl") {
         valor = `${valor}%`;
     }
-    else if (id == "ct" || id == "ev"){
-        valor = valor > 0 ? `${valorDivido[0]},${valorDivido[1]?.substring(0,2)}%` : valor;
+    else if (id == "ct" || id == "ev") {
+        valor = valor > 0 ? (valorDivido[1]?.substring(0, 2) ? `${valorDivido[0]},${valorDivido[1]?.substring(0, 2)}%` : `${valorDivido[0]}%`) : valor;
     }
 
     return valor;
