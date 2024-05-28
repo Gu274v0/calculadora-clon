@@ -94,3 +94,15 @@ body {
     background-size: 6rem;
     background-position: 98% 98%;
 }
+
+@media (max-width: 575.98px) {
+    .select-td {
+        min-width: 5rem;
+        max-width: 5rem;
+    }
+
+    .result-td {
+        min-width: 5rem;
+        max-width: 5rem;
+    }
+}
